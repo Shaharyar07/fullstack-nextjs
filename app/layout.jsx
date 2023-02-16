@@ -10,10 +10,7 @@ const roboto = Roboto({
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+
       <head />
       <body className={`mx-5 md:mx-48 ${roboto.variable}`}>
         <Nav />
