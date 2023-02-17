@@ -1,7 +1,20 @@
-export default function Home() {
+"use client";
+const getPosts = async () => {
+  const res = await fetch("http://localhost:3000/api/post");
+  const posts = await res.json();
+  return posts;
+};
+
+export default async function Home() {
+  const posts = await getPosts();
+
   return (
     <>
-      <h1 className='text-red-500'>Hello World!</h1>
+      {posts.map((post: any) => (
+        <div key={post.id}>
+          <h2>{post.title}</h2>
+        </div>
+      ))}
     </>
-  )
+  );
 }
